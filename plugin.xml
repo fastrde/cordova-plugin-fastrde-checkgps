@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="de.fastr.phonegap.plugins.checkGPS" version="0.1.3">
+	<name>checkGPS</name>
+	<author>Fabian Strachanski</author>
+	<description>check if GPS is enabled on Android and iOS</description>
+	<license>MIT</license>
+	<keywords>gps, check, enabled, ios, android </keywords>
+	<repo>https://github.com/fastrde/phonegap-checkGPS.git</repo>
+	<issue>https://github.com/fastrde/phonegap-checkGPS/issues</issue>
+	<dependency id="org.apache.cordova.geolocation" version="1.0.1" />
+	<js-module src="www/checkgps.js" name="checkgps">
+		<clobbers target="checkgps" />
+	</js-module>
+	<platform name="android">
+		<source-file src="src/android/checkgps.java" target-dir="src/de/fastr/phonegap/plugins" />
+ 		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="CheckGPS">
+				<param name="android-package" value="de.fastr.phonegap.plugins.CheckGPS"/>
+			</feature>
+		</config-file>
+	</platform>
+	<platform name="ios">
+		<header-file src="src/ios/checkgps.h" /> 
+		<source-file src="src/ios/checkgps.m" /> 
+		<config-file target="config.xml" parent="/*">
+			<feature name="checkgps">
+				<param name="ios-package" value="checkgps" />
+			</feature>
+		</config-file>
+	</platform>
+</plugin>
