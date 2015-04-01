@@ -1,3 +1,6 @@
+#import "CDVCheckGPS.h"
+#import <CoreLocation/CoreLocation.h>
+
 @implementation CheckGPS
 
 - (void)check:(CDVInvokedUrlCommand*)command
@@ -11,3 +14,4 @@
 	}
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
+@end
